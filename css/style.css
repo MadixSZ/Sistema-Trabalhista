@@ -1,0 +1,59 @@
+/* CABEÇALHO */
+.header-transparent {
+    padding: 15px 0px;
+    background: rgba(0,0,0,0.6);
+}
+
+.main-content {
+    padding-top: 80px;
+    min-height: calc(100vh - 60px); 
+}
+
+/* Links */
+.header-transparent .nav-link {
+    color: white;
+}
+
+.header-transparent .nav-link:hover {
+    color: #cda5ee;
+}
+
+
+
+/* Sistema trabalhista */
+.btn-verde {
+    background-color: #3c7c11;
+    color: white;
+    border: none;
+}
+
+.btn-verde:hover {
+    background-color: #255806;
+    color: white;
+}
+
+.alert {
+    border: none;
+    border-radius: 8px;
+}
+
+.alert-info {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-primary {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
