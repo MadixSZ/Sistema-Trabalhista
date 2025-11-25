@@ -18,9 +18,7 @@
     color: #cda5ee;
 }
 
-
-
-/* Sistema trabalhista */
+/* Sistemas */
 .btn-verde {
     background-color: #3c7c11;
     color: white;
@@ -56,4 +54,70 @@
 .footer {
     background-color: #f8f9fa;
     border-top: 1px solid #dee2e6;
+}
+
+.resultado-item {
+    margin-bottom: 1rem;
+}
+
+.resultado-item h6 {
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.btn-verde {
+    background: linear-gradient(145deg, #28a745, #20c997);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-verde:hover {
+    background: linear-gradient(145deg, #218838, #1e9e6e);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.fibo-explicacao {
+    background: #f8f9fa;
+    border-left: 4px solid #6f42c1;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.fibo-explicacao h6 {
+    color: #6f42c1;
+    font-weight: bold;
+}
+
+.sequencia-fibonacci {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #6f42c1;
+    font-size: 1.1em;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+}
+
+.form-control:focus {
+    border-color: #6f42c1;
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
 }
