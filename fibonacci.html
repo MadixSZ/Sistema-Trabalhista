@@ -108,55 +108,70 @@
                 // Gerar sequência de Fibonacci
                 var fibo = [];
                 if (n >= 1) fibo[0] = 1;
-                if (n >= 2) fibo[1] = 1;
                 
-                for (var i = 2; i < n; i++) {
-                    fibo[i] = fibo[i-1] + fibo[i-2];
-                }
+                for (var i = 1; i < n; i++) {
+                    if (i % 2 === 0) { var ultimosImpares = [];
                 
-                // Verificar se N está na sequência
-                var estaNaSequencia = false;
-                var a = 1, b = 1;
-                
-                if (n === 1) {
-                    estaNaSequencia = true;
-                } else {
-                    while (b <= n) {
-                        if (b === n) {
-                            estaNaSequencia = true;
-                            break;
+                for (var j = i-1; j >= 0; j--) {
+                    if (fibo[j] % 2 !== 0) { // ímpar
+                        ultimosImpares.push(fibo[j]);
+                        if (ultimosImpares.length === 3) {
+                            break; s
                         }
-                        var proximo = a + b;
-                        a = b;
-                        b = proximo;
                     }
                 }
                 
-                // Resultados
-                document.getElementById('quantidadeN').textContent = n;
-                document.getElementById('numeroVerificado').textContent = n;
-                document.getElementById('sequenciaFibonacci').textContent = fibo.join(' → ');
-                
-                var statusBox = document.getElementById('statusBox');
-                var statusText = document.getElementById('statusFibonacci');
-                
-                if (estaNaSequencia) {
-                    statusBox.style.backgroundColor = '#28a745';
-                    statusText.innerHTML = 'Faz parte da sequência!';
-                } else {
-                    statusBox.style.backgroundColor = '#dc3545';
-                    statusText.innerHTML = 'Não faz parte da sequência';
+                var soma = 0;
+                for (var k = 0; k < ultimosImpares.length; k++) {
+                    soma += ultimosImpares[k];
                 }
                 
-                document.getElementById('resultados').style.display = 'block';
+                fibo[i] = soma;
                 
-                // Rola até os resultados
-                document.getElementById('resultados').scrollIntoView({ behavior: 'smooth' });
-                
-            } else {
-                alert('Por favor, digite um número entre 1 e 50.');
+            } else { 
+                // Fibonacci 
+                if (i === 1) {
+                    fibo[1] = 1;
+                } else {
+                    fibo[i] = fibo[i-1] + fibo[i-2];
+                }
             }
-        });
+        }
+        
+        // Verificar se N está na sequência 
+        var estaNaSequencia = false;
+        for (var v = 0; v < fibo.length; v++) {
+            if (fibo[v] === n) {
+                estaNaSequencia = true;
+                break;
+            }
+        }
+        
+        // Resultados
+        document.getElementById('quantidadeN').textContent = n;
+        document.getElementById('numeroVerificado').textContent = n;
+        document.getElementById('sequenciaFibonacci').textContent = fibo.join(' → ');
+        
+        var statusBox = document.getElementById('statusBox');
+        var statusText = document.getElementById('statusFibonacci');
+        
+        if (estaNaSequencia) {
+            statusBox.style.backgroundColor = '#28a745';
+            statusText.innerHTML = 'Faz parte da sequência!';
+        } else {
+            statusBox.style.backgroundColor = '#dc3545';
+            statusText.innerHTML = 'Não faz parte da sequência';
+        }
+        
+        document.getElementById('resultados').style.display = 'block';
+        
+        // Rola até os resultados
+        document.getElementById('resultados').scrollIntoView({ behavior: 'smooth' });
+        
+    } else {
+        alert('Por favor, digite um número entre 1 e 50.');
+    }
+});
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -112,6 +112,12 @@
     
         // Calcular salario bruto
         const salarioBruto = salarioHora * horasTrabalhadas;
+
+        //Salaio hora
+        if (salarioHora <= 0) {
+            alert("Valor negativo");
+            return
+        }
     
         // Calcular salário família
         let valorPorFilho;
